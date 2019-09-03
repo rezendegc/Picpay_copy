@@ -37,9 +37,12 @@ class _HomePageState extends State<HomePage> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(top: 30.0),
-          child: CustomFAB(
-            backgroundColors: _paymentSelected ? gradient2 : gradient,
-            onTap: _goToPaymentHome,
+          child: MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 0.8),
+            child: CustomFAB(
+              backgroundColors: _paymentSelected ? gradient2 : gradient,
+              onTap: _goToPaymentHome,
+            ),
           ),
         ),
         bottomNavigationBar: FABBottomAppBar(

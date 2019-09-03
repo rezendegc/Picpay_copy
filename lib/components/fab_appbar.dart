@@ -44,42 +44,49 @@ class FABBottomAppBarState extends State<FABBottomAppBar> {
 
     return BottomAppBar(
       elevation: 1,
-      child: Container(
-        height: widget.height,
-        child: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            FABItem(
-              text: "Início",
-              iconData: Icons.home,
-              iconColor: _selectedIndex == 0 ? Colors.green[900] : Colors.grey,
-              iconSize: widget.iconSize,
-              onPressed: () => _updateIndex(0),
-            ),
-            FABItem(
-              text: "Carteira",
-              iconData: Icons.credit_card,
-              iconColor: _selectedIndex == 1 ? Colors.green[900] : Colors.grey,
-              iconSize: widget.iconSize,
-              onPressed: () => _updateIndex(1),
-            ),
-            SizedBox(width: screenWidth / 5),
-            FABItem(
-              text: "Notificações",
-              iconData: Icons.notifications,
-              iconColor: _selectedIndex == 2 ? Colors.green[900] : Colors.grey,
-              iconSize: widget.iconSize,
-              onPressed: () => _updateIndex(2),
-            ),
-            FABItem(
-              text: "Ajustes",
-              iconData: Icons.settings,
-              iconColor: _selectedIndex == 3 ? Colors.green[900] : Colors.grey,
-              iconSize: widget.iconSize,
-              onPressed: () => _updateIndex(3),
-            ),
-          ],
+      child: MediaQuery(
+        data: MediaQuery.of(context).copyWith(textScaleFactor: 0.6),
+        child: Container(
+          height: widget.height,
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              FABItem(
+                text: "Início",
+                iconData: Icons.home,
+                iconColor:
+                    _selectedIndex == 0 ? Colors.green[900] : Colors.grey,
+                iconSize: widget.iconSize,
+                onPressed: () => _updateIndex(0),
+              ),
+              FABItem(
+                text: "Carteira",
+                iconData: Icons.credit_card,
+                iconColor:
+                    _selectedIndex == 1 ? Colors.green[900] : Colors.grey,
+                iconSize: widget.iconSize,
+                onPressed: () => _updateIndex(1),
+              ),
+              SizedBox(width: screenWidth / 5),
+              FABItem(
+                text: "Notificações",
+                iconData: Icons.notifications,
+                iconColor:
+                    _selectedIndex == 2 ? Colors.green[900] : Colors.grey,
+                iconSize: widget.iconSize,
+                onPressed: () => _updateIndex(2),
+              ),
+              FABItem(
+                text: "Ajustes",
+                iconData: Icons.settings,
+                iconColor:
+                    _selectedIndex == 3 ? Colors.green[900] : Colors.grey,
+                iconSize: widget.iconSize,
+                onPressed: () => _updateIndex(3),
+              ),
+            ],
+          ),
         ),
       ),
       color: widget.backgroundColor,
